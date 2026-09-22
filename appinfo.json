@@ -1,0 +1,10 @@
+{
+  "id": "co.albox.cinematv.lg",
+  "version": "1.0.0",
+  "vendor": "CinemaBox",
+  "type": "web",
+  "main": "index.html",
+  "title": "Cinema Box TV",
+  "icon": "icon.png",
+  "uiRevision": 2
+}

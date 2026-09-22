@@ -18,11 +18,9 @@ jobs:
       with:
         node-version: '20'
 
-    - name: Ensure icon.png exists
+    - name: Create dummy icon.png
       run: |
-        if [ ! -f icon.png ]; then
-          python3 -c "from PIL import Image; img = Image.new('RGB', (80, 80), color='#e50914'); img.save('icon.png')"
-        fi
+        curl -s -o icon.png "https://dummyimage.com/80x80/e50914/ffffff.png&text=CB"
 
     - name: Install webOS CLI
       run: npm install -g @webosose/ares-cli

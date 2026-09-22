@@ -11,12 +11,18 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '20'
+
+    - name: Ensure icon.png exists
+      run: |
+        if [ ! -f icon.png ]; then
+          python3 -c "from PIL import Image; img = Image.new('RGB', (80, 80), color='#e50914'); img.save('icon.png')"
+        fi
 
     - name: Install webOS CLI
       run: npm install -g @webosose/ares-cli
